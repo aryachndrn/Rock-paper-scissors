@@ -1,1 +1,1 @@
-Rock paper scissor random game generator using python
+A simple Rock paper scissor random game generator using python and also in html
