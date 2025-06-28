@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+
+</head>
+<body bgcolor="#613659">
+    <h1>
+        <img src="rock-paper-scissors.png" alt="rock-paper-scissors" class="img">
+        Do You Wanna Play a Simple Rock Paper Scissors Game?
+    </h1>
+    
+    <h2 style="color: #A47786;">Choose your move:</h2>
+    <button onclick="play('r')">ROCK</button>
+    <button onclick="play('p')">PAPER</button>
+    <button onclick="play('s')">SCISSOR</button>
+    <div class="card_c">
+    <div class="card">
+        <div class="card_y"></div>
+        <div id="userid">You</div>
+    </div>
+    <div class="card">
+        <div class="card_com"></div>
+        <div id="compid">Computer</div>
+    </div>
+    </div>
+    <p id="result"></p>
+    <script>
+        function play(user)
+        {
+            let comp;
+            let num = Math.floor(Math.random()*3);
+            let outcome="";
+
+            if(num==0)
+            {
+                comp='r';
+            }
+            else if(num==1)
+            {
+                comp='p';
+            }
+            else
+            {
+                comp='s';
+            }
+
+            if(user==comp)
+            {
+                outcome="It's a tie!";
+
+            }
+            else if((user == 'r' && comp == 'p') || (user == 'p' && comp == 's') ||(user == 's' && comp == 'r'))
+            {
+                outcome = "The computer won! 😈";
+            }
+            else
+            {
+                outcome = "Woohoo, You won! 🥳";
+            }
+            document.getElementById("userid").innerHTML=Imag(user);
+            document.getElementById("compid").innerHTML=Imag(comp);
+            document.getElementById("result").innerText=outcome;
+
+
+        }
+        function Imag(x) 
+    {
+      if (x == 'r') return '<img src="stone.png" alt="Rock" class="image">';
+      if (x == 'p') return '<img src="paper.png" alt="Paper" class="image">';
+      if (x == 's') return '<img src="scissors.png" alt="Scissors" class="image">';
+    }
+
+    </script>
+
+    
+</body>
+</html>
